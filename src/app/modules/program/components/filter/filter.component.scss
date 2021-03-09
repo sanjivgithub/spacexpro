@@ -1,0 +1,39 @@
+@import '../../../../../assets/core/_variables';
+
+.filter-template
+{background-color: $COLOR-WHITE; display: block; margin-bottom: .5rem; padding: .5rem .75rem; @include border-radius(.25rem);
+    @media only screen and (min-width: $tablet-min)
+    {width: 184px;}
+    legend
+    {font-size: 1rem; font-weight: 700; margin-bottom: .5rem;}
+    .filter-body
+    {border: none; display: block; margin: 0; padding: 0;}
+}
+.filter-organism
+{
+    & + .filter-organism
+    {margin-top: .75rem;}
+    h2
+    {border-bottom: 1px solid $COLOR-GREY35; font-size: .875rem; margin: 0 auto .5rem; max-width: 84%; padding-bottom: .25rem; text-align: center;}
+}
+.filter-molecule
+{display: flex; flex-wrap: wrap; justify-content: space-between;
+    label
+    {display: block; overflow: hidden; margin: .25rem calc(25% - 60px); width: 60px;
+        @media only screen and (min-width: $tablet-min)
+        {margin: .25rem;}
+    }
+    input[type="checkbox"], input[type="radio"]
+    {display: none;}
+}
+.filter-label
+{background-color: $COLOR-GREEN-205-236-168; cursor: pointer; display: block; font-size: .875rem; line-height: 1.2; padding: .25rem; text-align: center; width: 100%; @include border-radius(.25rem); @include transition(background-color .5s ease);
+    &:hover
+    {background-color: $COLOR-GREEN-158-236-65;}
+    &.active-agent
+    {background-color: $COLOR-GREEN-158-236-65;}
+}
+input[type="checkbox"]:checked + .filter-label
+{background-color: $COLOR-GREEN-158-236-65;}
+input[type="radio"]:checked + .filter-label
+{background-color: $COLOR-GREEN-158-236-65;}

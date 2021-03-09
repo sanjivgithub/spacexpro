@@ -1,0 +1,7 @@
+@import '../../../assets/core/_variables';
+
+.program-list
+{
+    @media only screen and (min-width: $tablet-min)
+    {display: flex; justify-content: flex-start; flex-wrap: wrap; margin-top: -.5rem; width: calc(100% - 192px);}
+}

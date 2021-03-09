@@ -1,0 +1,31 @@
+<div *ngIf="showLoader" class="loader">Loading...</div>
+<div *ngFor="let program of programs" class="program-template">
+    <picture *ngIf="program.links.mission_patch">
+        <source [srcset]="program.links.mission_patch_small" media="(max-width: 700px)" />
+        <source [srcset]="program.links.mission_patch" media="(min-width: 701px)" />
+        <img [src]="program.links.mission_patch_small" [srcset]="program.links.mission_patch" [alt]="program.details" height="248" width="248" />
+    </picture>
+    <i *ngIf="program.links.mission_patch === null || program.links.mission_patch_small === null" class="no-photo">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve"><circle cx="10.75" cy="4.5" r="1.25"/><polygon points="8.167,9.584 5.5,5.25 3,12.25 13,12.25 10.834,7.75 "/><path d="M16,13c0,1.105-0.896,2-2,2H2c-1.104,0-2-0.895-2-2V3c0-1.104,0.896-2,2-2h12c1.104,0,2,0.896,2,2V13z M15,3c0-0.552-0.447-1-1-1H2C1.448,2,1,2.448,1,3v10c0,0.553,0.448,1,1,1h12c0.553,0,1-0.447,1-1V3z"/></svg>
+    </i>
+    <h2><a [href]="program.links.article_link" [title]="program.mission_name">{{program.mission_name + ' #' + program.flight_number}}</a></h2>
+    <div class="program-molecule">
+        <h3>Mission Ids:</h3>
+        <ul *ngIf="program.mission_id.length">
+            <li>List Mission ids</li>
+        </ul>
+        <span *ngIf="program.mission_id.length === 0">No Mission ids</span>
+    </div>
+    <div class="program-molecule">
+        <h3>Launch Year:</h3>
+        <span [title]="program.launch_year">{{program.launch_year}}</span>
+    </div>
+    <div class="program-molecule">
+        <h3>Successful Launch:</h3>
+        <span>{{program.launch_success}}</span>
+    </div>
+    <div class="program-molecule">
+        <h3>Successful Landing:</h3>
+        <span>{{program.rocket.first_stage.cores[0].landing_intent}}</span>
+    </div>
+</div>

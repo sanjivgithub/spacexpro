@@ -1,0 +1,47 @@
+<form action="/" method="post"div class="filter-template">
+    <fieldset class="filter-body">
+        <legend>Filters</legend>
+        <div class="filter-organism">
+            <h2>Launch Year</h2>
+            <div class="filter-criteria-body">
+                <div class="filter-molecule">
+                    <div *ngIf="showLoader" class="loading">Loading...</div>
+                    <label *ngFor="let year of years" (click)="loadData(year)">
+                        <input type="radio" name="year" [id]="'year_'+ year" [value]="year" [title]="'Year: ' + year">
+                        <span class="filter-label">{{year}}</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="filter-organism">
+            <h2>Successful Launch</h2>
+            <div class="filter-criteria-body">
+                <div class="filter-molecule">
+                    <label (click)="launchData()">
+                        <input type="radio" name="launch" id="launch_1" value="1" title="True">
+                        <span class="filter-label">True</span>
+                    </label>
+                    <label (click)="launchData()">
+                        <input type="radio" name="launch" id="launch_0" value="0" title="False">
+                        <span class="filter-label">False</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="filter-organism">
+            <h2>Successful Landing</h2>
+            <div class="filter-criteria-body">
+                <div class="filter-molecule">
+                    <label (click)="landingData()">
+                        <input type="radio" name="landing" id="landing_1" value="1" title="True">
+                        <span class="filter-label">True</span>
+                    </label>
+                    <label (click)="landingData()">
+                        <input type="radio" name="landing" id="landing_0" value="0" title="False">
+                        <span class="filter-label">False</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>
