@@ -1,0 +1,161 @@
+$COLOR-GREY0					: #000000;
+$COLOR-GREY5					: #f1f2f2;
+$COLOR-GREY10					: #e6e7e8;
+$COLOR-GREY15					: #dcddde;
+$COLOR-GREY20					: #d1d3d4;
+$COLOR-GREY35					: #b1b3b6;
+$COLOR-GREY50					: #939598;
+$COLOR-GREY70					: #6d6e71;
+$COLOR-GREY80					: #58595b;
+$COLOR-GREY90					: #414042;
+$COLOR-GREY100					: #231f20;
+
+$COLOR-BLUE-11-0-128			: #0B0080;
+
+$COLOR-GREEN-158-236-65			: #9eec41;
+$COLOR-GREEN-205-236-168		: #cdeca8;
+
+$COLOR-WHITE					: #ffffff;
+
+$mobile							: 699px;
+$tablet-min						: 700px;
+$tablet-max						: 1024px;
+$desktop-min					: 1025px;
+$desktop-max					: 1400px;
+$large							: 1401px;
+
+@mixin user-select($effect) {
+	-ms-user-select				: $effect;
+	-moz-user-select			: $effect;
+	-o-user-select				: $effect;
+	-webkit-user-select			: $effect;
+	-webkit-touch-callout		: $effect;
+	user-select					: $effect;
+}
+@mixin transition($effect) {
+	-ms-transition				: $effect;
+	-moz-transition				: $effect;
+	-o-transition				: $effect;
+	-webkit-transition			: $effect;
+	transition					: $effect;
+}
+
+@mixin multi-transition($transition...) {
+	-ms-transition				: $transition;
+	-moz-transition				: $transition;
+	-o-transition				: $transition;
+	-webkit-transition			: $transition;
+	transition					: $transition;
+}
+
+@mixin transition-delay($effect) {
+	-ms-transition-delay		: $effect;
+	-moz-transition-delay		: $effect;
+	-o-transition-delay			: $effect;
+	-webkit-transition-delay	: $effect;
+	transition-delay			: $effect;
+}
+
+@mixin transition-duration($effect) {
+	-ms-transition-duration		: $effect;
+	-moz-transition-duration	: $effect;
+	-o-transition-duration		: $effect;
+	-webkit-transition-duration	: $effect;
+	transition-duration			: $effect;
+}
+
+@mixin transform($transform) {
+	-ms-transform				: $transform;
+	-moz-transform				: $transform;
+	-o-transform				: $transform;
+	-webkit-transform			: $transform;
+	transform					: $transform;
+}
+
+@mixin box-shadow($shadow) {
+	-ms-box-shadow				: $shadow;
+	-moz-box-shadow				: $shadow;
+	-o-box-shadow				: $shadow;
+	-webkit-box-shadow			: $shadow;
+	box-shadow					: $shadow;
+}
+
+@mixin multi-box-shadow($shadow...) {
+	-ms-box-shadow				: $shadow;
+	-moz-box-shadow				: $shadow;
+	-o-box-shadow				: $shadow;
+	-webkit-box-shadow			: $shadow;
+	box-shadow					: $shadow;
+}
+
+@mixin box-sizing($size) {
+	-ms-box-sizing				: $size;
+	-moz-box-sizing				: $size;
+	-o-box-sizing				: $size;
+	-webkit-box-sizing			: $size;
+	box-sizing					: $size;
+}
+
+@mixin border-radius($radius) {
+	-ms-border-radius			: $radius;
+	-moz-border-radius			: $radius;
+	-o-border-radius			: $radius;
+	-webkit-border-radius		: $radius;
+	border-radius				: $radius;
+}
+
+@mixin animation($animation) {
+	-ms-animation				: $animation;
+	-moz-animation				: $animation;
+	-o-animation				: $animation;
+	-webkit-animation			: $animation;
+	animation					: $animation;
+}
+
+@mixin animation-delay($animation) {
+	-ms-animation-delay			: $animation;
+	-moz-animation-delay		: $animation;
+	-o-animation-delay			: $animation;
+	-webkit-animation-delay		: $animation;
+	animation-delay				: $animation;
+}
+
+@mixin animation-duration($animation) {
+	-ms-animation-duration		: $animation;
+	-moz-animation-duration		: $animation;
+	-o-animation-duration		: $animation;
+	-webkit-animation-duration	: $animation;
+	animation-duration			: $animation;
+}
+
+@mixin animation-fill-mode($animation) {
+	-ms-animation-fill-mode		: $animation;
+	-moz-animation-fill-mode	: $animation;
+	-o-animation-fill-mode		: $animation;
+	-webkit-animation-fill-mode	: $animation;
+	animation-fill-mode			: $animation;
+}
+
+@mixin keyframes($name) {
+	@-ms-keyframes #{$name}		{@content;}
+	@-moz-keyframes #{$name}	{@content;}
+	@-o-keyframes #{$name}		{@content;}
+	@-webkit-keyframes #{$name}	{@content;}
+	@keyframes #{$name}			{@content;}
+}
+
+@mixin clear-float-none {
+    clear: both;
+    float: none;
+}
+
+@mixin clear-after {
+    background:none; border:none; @include clear-float-none; content:''; display:block; font-size:0; height:0; line-height:0; width:100%;
+}
+
+
+$BODY-BG-COLOR: $COLOR-GREY10;
+$DEFAULT_FONT : 'Noto Sans', sans-serif;
+$DEFAULT_COLOR : $COLOR-GREY0;
+$DEFAULT_LINK_COLOR : $COLOR-BLUE-11-0-128;
+$DEFAULT_HOVER_COLOR : $COLOR-BLUE-11-0-128;
